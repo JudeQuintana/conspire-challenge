@@ -24,15 +24,15 @@ class AwsApi
   end
 
   def build_objects_arr
-    @bucket.objects.each_with_object([]) do |obj, arr|
+    @bucket.objects.each_with_object([]) { |obj, arr|
 
       separated_elements = parse_tabs(obj.read)
 
-      separated_elements.each do |contents|
+      separated_elements.each { |contents|
 
         arr << {"filename" => obj.key, "key" => contents.first.strip, "value" => contents.last.strip}
-      end
-    end
+      }
+    }
   end
 
 end
