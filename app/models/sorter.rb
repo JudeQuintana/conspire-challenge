@@ -10,8 +10,6 @@ class Sorter
 
   def sort
     order_arr = build_order_arr
-    puts "order_arr"
-    p order_arr
     @arr.sort_by { |obj| [obj[order_arr[0]], obj[order_arr[1]], obj[order_arr[2]]] }
   end
 
