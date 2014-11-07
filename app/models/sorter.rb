@@ -30,5 +30,4 @@ class Sorter
         "filename"
     end
   end
-
 end
