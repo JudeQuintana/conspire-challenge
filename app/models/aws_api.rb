@@ -25,7 +25,7 @@ class AwsApi
     @bucket.objects.each_with_object([]) { |obj, arr|
       separated_elements = parse_tabs(obj.read)
       separated_elements.each { |contents|
-        arr << {"filename" => obj.key, "key" => contents.first.strip, "value" => contents.last.strip}
+        arr << {"filename" => obj.key, "key" => contents.first.to_s.strip, "value" => contents.last.to_s.strip}
       }
     }
   end
