@@ -7,6 +7,6 @@ module StringParser
   end
 
   def parse_opts(opts_string)
-    opts_string.nil? ? [] : opts_string[0..2].split(//).uniq.select { |char| char =~ /[fkv]/ }
+    opts_string.nil? ? [] : opts_string.split(//).uniq.select { |char| char =~ /[fkv]/ }
   end
 end
