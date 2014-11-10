@@ -2,7 +2,7 @@ require 'csv'
 
 module StringParser
 
-  def parse_tabs(tab_string)
+  def parse_tabs(tab_string)#parses tab delimited string, skipping empty lines
     CSV.parse(tab_string, {:col_sep => "\t", :skip_blanks => true})
   end
 
