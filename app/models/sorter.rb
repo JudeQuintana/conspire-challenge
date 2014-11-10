@@ -11,7 +11,7 @@ class Sorter
   def sort
     order_arr = build_order_arr
     @arr.sort_by { |obj| [obj[order_arr[0]], obj[order_arr[1]], obj[order_arr[2]]] }
-    #sorting array of objects(hashes) by their keys according to the order of the order array
+    #sorting array of objects(hashes) by their key values according to the order of the order array
   end
 
   private
