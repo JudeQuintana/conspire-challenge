@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe 'get /query' do
 
   let(:partial_expected) {
@@ -9,7 +8,6 @@ describe 'get /query' do
   it 'tests /query endpoint returns a json blob' do
 
     get '/query'
-
 
     expect(response.code.to_i).to eq 200
     expect(JSON.parse(response.body)).to include(partial_expected)
