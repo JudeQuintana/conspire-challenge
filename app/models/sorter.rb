@@ -1,7 +1,7 @@
 class Sorter
   include StringParser
 
-  DEFAULT_ORDER = ["filename", "key", "value"]
+  DEFAULT_ORDER = %w{filename key value}
 
   def initialize(arr, sort_opts)
     @arr = arr
@@ -19,9 +19,10 @@ class Sorter
   def build_order_arr
     order_arr = @sort_opts.map { |char| letter_to_word(char) }
     order_arr + (DEFAULT_ORDER - order_arr)
-    #array subtraction gives me what missing if order_arr = ["key","value"]
-    #then DEFAULT_ORDER - order_arr gives me what missing "filename"
+    #array subtraction gives me what is missing if order_arr = ["key","value"]
+    #then DEFAULT_ORDER - order_arr gives me "filename"
     #then add that to my order_arr = ["key", "value", "filename"]
+    #so on and so forth, if order_arr = ["value"] then array subtraction gives me ["filename","key"], the add them together
     #if order_arr is an empty array (blank sort_options) then the array subtraction gives me the DEFAULT_ORDER
   end
 

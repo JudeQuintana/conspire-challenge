@@ -24,7 +24,7 @@ class AwsApi
   def build_objects_arr #iterating over each object in the bucket
     @bucket.objects.each_with_object([]) { |obj, arr|
       separated_elements = parse_tabs(obj.read)#parsing contents of each file
-      
+
       #building hash object for each filename(obj.key) with contents of each parsed tab elements, to_s handles nil values
       separated_elements.each { |contents|
         arr << {"filename" => obj.key, "key" => contents.first.to_s.strip, "value" => contents.last.to_s.strip}
