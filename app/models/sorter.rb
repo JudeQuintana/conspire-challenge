@@ -22,7 +22,8 @@ class Sorter
     #array subtraction gives me what is missing if order_arr = ["key","value"]
     #then DEFAULT_ORDER - order_arr gives me "filename"
     #then add that to my order_arr = ["key", "value", "filename"]
-    #so on and so forth, if order_arr = ["value"] then array subtraction gives me ["filename","key"], the add them together
+    #so on and so forth, if order_arr = ["value"] then array subtraction gives me ["filename","key"],
+    #then add them together
     #if order_arr is an empty array (blank sort_options) then the array subtraction gives me the DEFAULT_ORDER
   end
 
