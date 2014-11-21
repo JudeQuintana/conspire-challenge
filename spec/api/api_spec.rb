@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'get /query' do
 
   let(:partial_expected) {
-    #yes this is actual text provided conspire for the challenge
+    #yes this is actual text provided by conspire for the challenge
     {"filename" => "claims_to_fame.txt", "key" => "Boulder, CO", "value" => "mountains and marijuana"}
   }
   it 'tests /query endpoint returns a json blob' do
